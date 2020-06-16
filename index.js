@@ -4,19 +4,21 @@ const app = express();
 
 const PORT = 4000;
 
+const betweenHome = (req, res, next) => {
+    console.log("Between request and router");
+    next();
+}
 const handleHome = (req, res) => {
-    console.log(req);
     res.send('Hello from home!');
 }
-app.get("/", handleHome);
-
 const handleProfile = (req, res) => {
-    console.log(req);
     res.send("You are on my Profile!");
 }
-app.get("/profile", handleProfile);
-
 const handleListening = () => {
     console.log(`Listening Start on : http://localhost:${PORT}`);
 }
+
+app.use(betweenHome);
+app.get("/", handleHome);
+app.get("/profile", handleProfile);
 app.listen(PORT, handleListening);
