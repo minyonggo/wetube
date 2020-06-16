@@ -1,9 +1,10 @@
 header
     .header__column
-        i.fa.fa-youtube-play(aria-hidden="true")
+        a(href=routes.home)
+            i.fa.fa-youtube-play(aria-hidden="true")
     .header__column
         ul 
             li
-                a(href="#") Join
+                a(href=routes.join) Join
             li
-                a(href="#") Log in
+                a(href=routes.login) Log in
