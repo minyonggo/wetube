@@ -1,6 +1,6 @@
 import app from './app';
 
-const PORT = 3000;
+const PORT = 2000;
 
 const handleListening = () => {
     console.log(`Listening Start on : http://localhost:${PORT}`);
