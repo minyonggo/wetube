@@ -1,4 +1,9 @@
 extends layouts/main
+include mixins/videoBlock
 
 block content
-    h2 Searching for #{searchingBy}
+    .search__header
+        h2 Searching for #{searchingBy}
+    .search__videos
+        each video in videoDB
+            +videoBlock(video)

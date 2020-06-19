@@ -1,5 +1,22 @@
+import routes from "../routes";
+
 // Global
-export const join = (req, res) => res.render("join", {pageTitle : "Join"});
+export const getJoin = (req, res) => res.render("join", {pageTitle : "Join"});
+export const postJoin = (req, res) => {
+    const {
+        body: { name, email, password, password2 }
+    } = req;
+     
+    if(password !== password2) {
+        res.render("join", {pageTitle : "Join"});
+        res.status(400);
+    } else {
+        //To do : Register User
+        //To do : Log user in
+        res.redirect(routes.home);
+    }
+};
+
 export const login = (req, res) => res.render("login", {pageTitle : "Login"});
 export const logout = (req, res) => res.render("logout", {pageTitle : "Logout"});
 
