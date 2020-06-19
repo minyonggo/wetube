@@ -1,12 +1,16 @@
+import {videoDB} from '../db';
+
 // Global
-export const home = (req, res) => res.render("home", {pageTitle: "Home"});
+export const home = (req, res) => {
+    res.render("home", {pageTitle: "Home", videoDB});
+};
+
 export const search = (req, res) => {
     const {
         query: {
             term: searchingBy
         }
     } = req;
-    console.log(searchingBy);
     res.render("search", {pageTitle: "Search", searchingBy});
 };
 
