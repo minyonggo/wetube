@@ -19,6 +19,7 @@ export const postJoin = (req, res) => {
 
 export const getLogin = (req, res) => res.render("login", {pageTitle : "Login"});
 export const postLogin = (req, res) => {
+    //To do : confirm user
     res.redirect(routes.home);
 };
 
