@@ -1,50 +1,14 @@
-export const videoDB = [
-    {
-        id: 324393,
-        title: 'Video Awesome',
-        description: 'This is something I Love',
-        views: 24,
-        videoFile: "http://www.tomodevel.jp/material/video/disneyTour.mp4",
-        creator: {
-            id: 199231,
-            name: "Nicolas",
-            email: "nico@las.com",
-        }
-    },
-    {
-        id: 566756,
-        title: 'Video Nice',
-        description: 'This is something I Love',
-        views: 24,
-        videoFile: "http://www.tomodevel.jp/material/video/disneyTour.mp4",
-        creator: {
-            id: 199231,
-            name: "Nicolas",
-            email: "nico@las.com",
-        }
-    },
-    {
-        id: 977644,
-        title: 'Video Perfect',
-        description: 'This is something I Love',
-        views: 24,
-        videoFile: "http://www.tomodevel.jp/material/video/disneyTour.mp4",
-        creator: {
-            id: 199231,
-            name: "Nicolas",
-            email: "nico@las.com",
-        }
-    },
-    {
-        id: 773553,
-        title: 'Video Super',
-        description: 'This is something I Love',
-        views: 24,
-        videoFile: "http://www.tomodevel.jp/material/video/disneyTour.mp4",
-        creator: {
-            id: 199231,
-            name: "Nicolas",
-            email: "nico@las.com",
-        }
-    },
-];
+import mongoose from "mongoose";
+
+mongoose.connect("mongodb://localhost:27017/we-tube", {
+  useNewUrlParser: true,
+  useFindAndModify: false,
+});
+
+const db = mongoose.connection;
+
+const handleOpen = () => console.log("Connected to DB");
+const handleError = (error) => console.log(`Error on DB Connection : ${error}`);
+
+db.once("open", handleOpen);
+db.once("error", handleError);
