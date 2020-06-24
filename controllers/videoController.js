@@ -4,7 +4,7 @@ import Video from "../models/Video";
 // Global
 export const home = async (req, res) => {
   try {
-    const videoDB = await Video.find({});
+    const videoDB = await Video.find({}).sort({ _id: -1 });
     res.render("home", { pageTitle: "Home", videoDB });
   } catch (error) {
     console.log(error);
@@ -12,11 +12,20 @@ export const home = async (req, res) => {
   }
 };
 
-export const search = (req, res) => {
+export const search = async (req, res) => {
   const {
     query: { term: searchingBy },
   } = req;
-  res.render("search", { pageTitle: "Search", searchingBy, videoDB });
+  let videos = [];
+  try {
+    videos = await Video.find({
+      title: { $regex: searchingBy, $options: "i" },
+    });
+    res.render("search", { pageTitle: "Search", searchingBy, videos });
+  } catch (error) {
+    console.log(error);
+    res.redirect(routes.home);
+  }
 };
 
 // Videos
