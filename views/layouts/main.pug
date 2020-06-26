@@ -2,6 +2,7 @@ doctype html
 html
     head
         title #{pageTitle} | #{siteName}
+        link(rel="stylesheet", href="/static/styles.css")
         script(src="https://use.fontawesome.com/bef3c981cc.js")
 
     body
@@ -11,3 +12,4 @@ html
             block content
 
         include ../partials/footer
+        script(src="static/main.js")
