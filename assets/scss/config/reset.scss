@@ -1,0 +1,124 @@
+// Margin, Padding initialization
+body,
+div,
+p,
+th,
+td,
+tr,
+table,
+figure,
+figcaption,
+ul,
+ol,
+li,
+dl,
+dd,
+dt,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+form,
+fieldset,
+legend,
+input,
+select,
+textarea,
+button {
+  margin: 0;
+  padding: 0;
+}
+
+// <a> link initialization
+a {
+  color: #222;
+  text-decoration: none;
+  &:hover {
+    color: #2698cb;
+  }
+}
+
+// Font initialization
+body,
+table,
+input,
+select,
+textarea,
+button {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #222;
+  font-size: 1rem;
+  line-height: 1.3;
+}
+
+em,
+address {
+  font-style: normal;
+}
+
+// bullet initialization
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+// border intialization
+img,
+fieldset {
+  border: 0;
+}
+
+// <h> Tag initialization
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+// button initialization
+button {
+  border: 0;
+  text-decoration: none;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+// responsive video & img
+video,
+img {
+  display: block;
+  width: 100%;
+}
+
+// ir_effection
+.ir_pm {
+  display: block;
+  overflow: hidden;
+  font-size: 0;
+  line-height: 0;
+  text-indent: -9999px;
+}
+.ir_wa {
+  display: block;
+  overflow: hidden;
+  position: relative;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+}
+.ir_so {
+  overflow: hidden;
+  position: absolute;
+  width: 0;
+  height: 0;
+  line-height: 0;
+  text-indent: -9999px;
+}

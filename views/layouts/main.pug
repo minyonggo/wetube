@@ -1,6 +1,12 @@
 doctype html
-html
+html(lang="ko/en")
     head
+        meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=egde")
+        meta(name="author", content="Mignon Web")
+        meta(name="description", content="YouTube Clonning")
+        meta(name="keywords", content="Mignon_Web,WeTube,YouTube")
+
         title #{pageTitle} | #{siteName}
         link(rel="stylesheet", href="/static/styles.css")
         script(src="https://use.fontawesome.com/bef3c981cc.js")
@@ -8,8 +14,11 @@ html
     body
         include ../partials/header
             
-        main
-            block content
+        main#main
+            .container
+                .row
+                    .main
+                        block content
 
         include ../partials/footer
-        script(src="static/main.js")
+        script(src="/static/main.js")

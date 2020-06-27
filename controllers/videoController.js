@@ -79,7 +79,7 @@ export const postEditVideo = async (req, res) => {
       body: { title, description },
     } = req;
     const video = await findVideoById(req);
-    await video.updateOne({ title }, { description });
+    await video.updateOne({ title, description });
     console.log(title, description);
   } catch (error) {
     console.log(error);

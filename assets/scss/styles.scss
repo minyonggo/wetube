@@ -1,5 +1,85 @@
+@charset 'UTF-8';
+
 @import "./config/variables";
+@import "./config/reset.scss";
 
 body {
   background-color: $bgdColor;
+}
+
+#header {
+  width: 100%;
+  background-color: $mainColor;
+}
+#main {
+  width: 100%;
+}
+#footer {
+  width: 100%;
+  background-color: darken($color: $bgdColor, $amount: 5%);
+}
+
+.container {
+  width: 1280px;
+  margin: 0 auto;
+}
+.row {
+  padding: 0 28px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 20px 0;
+
+  &__logo {
+    flex: 1;
+    text-align: center;
+    a {
+      font-size: 25px;
+      color: white;
+      i {
+        padding-right: 5px;
+      }
+      span {
+        letter-spacing: -2px;
+      }
+    }
+  }
+
+  &__searching {
+    flex: 5;
+    text-align: center;
+    input {
+      box-sizing: border-box;
+      width: 500px;
+      height: 30px;
+      padding-left: 10px;
+      border-radius: 2px;
+      border: 1px solid rgb(218, 218, 218);
+    }
+  }
+
+  &__config {
+    flex: 2;
+    ul {
+      display: flex;
+      li {
+        a {
+          color: white;
+          font-size: 1.1rem;
+          font-weight: 500;
+          padding-right: 19px;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+}
+
+.main {
+}
+
+.footer {
 }
