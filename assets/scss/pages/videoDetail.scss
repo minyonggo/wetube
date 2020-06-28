@@ -1,0 +1,40 @@
+.video {
+  width: 70%;
+  margin: 0 auto;
+
+  &__info {
+    & > * {
+      display: block;
+      margin-bottom: 15px;
+    }
+
+    a {
+      display: inline-block;
+      height: 20px;
+      margin-top: 10px;
+      line-height: 20px;
+      padding: 10px;
+      font-size: 1.05rem;
+      color: white;
+      background-color: rgb(108, 181, 211);
+      border-radius: 5px;
+      box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.1);
+
+      &:hover {
+        color: white;
+      }
+    }
+
+    p {
+      font-size: 1.2rem;
+    }
+
+    h5 {
+      font-size: 1.7rem;
+    }
+  }
+
+  &__comments {
+    text-align: center;
+  }
+}

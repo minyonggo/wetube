@@ -1,0 +1,18 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 20px 0;
+
+  &__icon i {
+    font-size: 60px;
+    color: rgba(0, 0, 0, 0.5);
+  }
+
+  &__text {
+    font-size: 25px;
+    text-transform: uppercase;
+  }
+}
