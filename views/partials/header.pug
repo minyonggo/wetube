@@ -13,7 +13,7 @@ header#header
 
                 .header__config
                     ul 
-                        if !user.isAuthenticated
+                        if !user
                             li
                                 a(href=routes.join) Join
                             li
