@@ -14,6 +14,7 @@ import userRouter from "./routers/userRouter";
 import videoRouter from "./routers/videoRouter";
 import './passport';
 import passport from 'passport';
+import authRouter from "./routers/authRouter";
 
 const app = express();
 dotenv.config();
@@ -46,5 +47,6 @@ app.use(locals);
 app.use(routes.home, globalRouter);
 app.use(routes.users, userRouter);
 app.use(routes.videos, videoRouter);
+app.use(routes.auth, authRouter);
 
 export default app;
