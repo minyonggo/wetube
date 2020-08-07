@@ -12,6 +12,7 @@ const USERS = "/users";
 const EDIT_PROFILE = "/edit-profile";
 const CHANGE_PASSWORD = "/change-password";
 const USER_DETAIL = "/:id";
+const MY_PROFILE = "/my-profile";
 
 // Videos
 const VIDEOS = "/videos";
@@ -19,6 +20,13 @@ const UPLOAD = "/upload";
 const VIDEO_DETAIL = "/:id";
 const EDIT_VIDEO = "/:id/edit";
 const DELETE_VIDEO = "/:id/delete";
+
+// O2Auth
+const AUTH = "/auth"
+
+// Github
+const GITHUB = "/github";
+const GITHUB_CALLBACK = "/github/callback";
 
 const routes = {
   home: HOME,
@@ -34,6 +42,7 @@ const routes = {
       return USER_DETAIL;
     }
   },
+  myProfile: MY_PROFILE,
   editProfile: EDIT_PROFILE,
   changePassword: CHANGE_PASSWORD,
   videos: VIDEOS,
@@ -59,6 +68,9 @@ const routes = {
       return DELETE_VIDEO;
     }
   },
+  auth: AUTH,
+  github: GITHUB,
+  githubCallback: GITHUB_CALLBACK
 };
 
 export default routes;
