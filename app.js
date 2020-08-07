@@ -12,8 +12,8 @@ import session from "express-session";
 import globalRouter from "./routers/globalRouter";
 import userRouter from "./routers/userRouter";
 import videoRouter from "./routers/videoRouter";
-import './passport';
-import passport from 'passport';
+import "./passport";
+import passport from "passport";
 
 const app = express();
 dotenv.config();
@@ -29,14 +29,16 @@ app.use(morgan("dev"));
 
 const CookieStore = mongoStore(session);
 
-app.use(session({
+app.use(
+  session({
     secret: process.env.COOKIE_SECRET,
     resave: false,
     saveUninitialized: true,
     store: new CookieStore({
-        mongooseConnection: mongoose.connection,
+      mongooseConnection: mongoose.connection,
     }),
-}));
+  })
+);
 
 app.use(passport.initialize());
 app.use(passport.session());

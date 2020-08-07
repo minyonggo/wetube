@@ -15,7 +15,7 @@ export const postJoin = async (req, res, next) => {
   } else {
     try {
       const user = await User({
-        name ,
+        name,
         email,
       });
       await User.register(user, password);
@@ -28,21 +28,19 @@ export const postJoin = async (req, res, next) => {
 
 export const getLogin = (req, res) =>
   res.render("login", { pageTitle: "Login" });
-export const postLogin = passport.authenticate('local', {
+export const postLogin = passport.authenticate("local", {
   failureRedirect: routes.login,
   successRedirect: routes.home,
 });
 
 export const logout = (req, res) => {
-  res.locals.user = {
-    isAuthenticated: false,
-    id: null,
-  };
+  req.logout();
   res.redirect(routes.home);
 };
 
 // Users
-export const users = (req, res) => res.render("users", { pageTitle: "Users", user: req.user });
+export const users = (req, res) =>
+  res.render("users", { pageTitle: "Users", user: req.user });
 export const editProfile = (req, res) =>
   res.render("editProfile", { pageTitle: "Edit Profile" });
 export const changePassword = (req, res) =>
