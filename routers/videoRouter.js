@@ -7,6 +7,7 @@ import {
   postUpload,
   getEditVideo,
   postEditVideo,
+  registerView,
 } from "../controllers/videoController";
 import { uploadVideo, onlyPrivate } from "../middleWares";
 

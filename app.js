@@ -9,6 +9,7 @@ import dotenv from "dotenv";
 import locals from "./middleWares";
 import routes from "./routes";
 import session from "express-session";
+import apiRouter from "./routers/apiRouter";
 import globalRouter from "./routers/globalRouter";
 import userRouter from "./routers/userRouter";
 import videoRouter from "./routers/videoRouter";
@@ -46,6 +47,7 @@ app.use(passport.session());
 
 app.use(locals);
 
+app.use(routes.api, apiRouter);
 app.use(routes.home, globalRouter);
 app.use(routes.users, userRouter);
 app.use(routes.videos, videoRouter);
